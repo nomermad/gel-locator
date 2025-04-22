@@ -1,35 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.impute import KNNImputer
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import SMOTE
-import plotly.express as px
-from scipy.stats import zscore
-from sklearn.linear_model import LinearRegression # this could be any ML method
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.experimental import enable_iterative_imputer
-from sklearn.impute import IterativeImputer, SimpleImputer
-from sklearn.preprocessing import StandardScaler, RobustScaler
-import plotly.figure_factory as ff
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.model_selection import cross_val_score
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-from sklearn.metrics import (
-    mean_squared_error,
-    mean_absolute_error,
-    r2_score,
-    root_mean_squared_error, 
-)
-
-import zipfile
-from PIL import Image
-
 from PIL import Image
 import numpy as np
 
@@ -43,7 +14,54 @@ for i in range(1, 21):
         image = Image.fromarray(image_array, mode='L')
     images[f'image_{i}'] = image
 
-# Access with images['image_1'], images['image_2'], ..., images['image_20']
+
+st.markdown("""
+    <style>
+    .stApp {
+        background: linear-gradient(to bottom, #000000, #1a1a2e, #16213e, #0f3460);
+        color: white;
+        font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    /* General text */
+    h1, h2, h3, h4, h5, h6, p, div, span, label {
+        color: #e0e0e0 !important;
+    }
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background-color: #111111 !important;
+        color: #e0e0e0 !important;
+    }
+
+    /* Dropdown input box */
+    div[data-baseweb="select"] > div {
+        background-color: #1c1c1c !important;
+        color: #f0f0f0 !important;
+        border-color: #444 !important;
+    }
+
+    /* Dropdown menu */
+    div[data-baseweb="select"] div[role="listbox"] {
+        background-color: #1c1c1c !important;
+        color: #f0f0f0 !important;
+    }
+
+    /* Dropdown options */
+    div[data-baseweb="select"] div[role="option"] {
+        background-color: #1c1c1c !important;
+        color: #f0f0f0 !important;
+    }
+
+    /* Hovered dropdown option */
+    div[data-baseweb="select"] div[role="option"]:hover {
+        background-color: #333333 !important;
+        color: #ffffff !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 
 
 image_path_otsu_1 = "Gel_1_otsu.tif"
@@ -247,36 +265,35 @@ option = st.sidebar.selectbox("Choose a section", ["Introduction","Data Overview
 
 if option == "Introduction":
     st.title("Overview of GEL Electrophoresis")
-    st.write("DNA gel electrophoresis is an important technique in biology laboratories that separates DNA fragments by size. However, accurately identifying and analyzing the regions of interest (ROI’s) is difficult, due to the background noise and variations in image quality.A ground truth dataset was established by manually creating binary image masks for a collection of DNA gel images. The ground truth is significant in building the model. It serves as a reference when comparing the performance of various models. This project explores thresholding methods, convolutional neural networks, and random forest. ")
-    st.title("Overview of this App")
+    st.write("Image data is a very common type of data collected for biological experiments. This project focuses on the basics of biological image processing focusing analysis of DNA gel electrophoresis images. This project evaluates multiple approaches for segmenting regions of interest (ROIs) containing fluorescent DNA, from the background. The methods include traditional thresholding techniques such as Otsu thresholding as well as advanced approaches like convolutional neural networks (CNNs). Performance evaluation was done using accuracy, jaccard, and recall metrics.")
     st.markdown("""
-    To determine which technique accurately reproduces the ground truth masks, three different techniques were used - thresholding and CNN.""") 
+    A ground truth dataset was established by manually creating binary image masks for a collection of DNA gel images. The ground truth is significant in building the model. It serves as a reference when comparing the performance of various models. This project explores thresholding methods, convolutional neural networks, and random forest. The ultimate goal of this project is to determine which technique accurately reproduces the ground truth masks, which provides researchers with a reliable tool..""") 
+
 
 elif option == "Data Overview":
     st.title("Overview of the Images")
-    st.write("""The dataset analyzed was a set of images that were found online and through prior experience in a lab. Initially, there were about 20 images that were then split into smaller segments. After splitting the images, there were 1000 images that were then picked based on their significance. There ended up being 50 training images and 5 testing images. The images represent PCR gel images. A PCR gel image represents the results of a PCR experiment conducted using gel electrophoresis. Gel electrophoresis separates the DNA fragments by size, which allows one to see if and what size DNA was amplified. 
-    To clean the dataset, noise was filtered out of the images. The size of the images was also reduced.
+    st.write("""The dataset analyzed was a set of images that were found online and prior lab data. Each image was converted to 8-bit data for consistency. Each image was manually classified by hand and the labels were transferred to a binary ground truth mask
     """)
     image_selection = st.selectbox("Choose an Image to display:", 
                                                 ["GEL 1",
-                                                 "Gel 2",
+                                                 "GEL 2",
                                                  "GEL 3",
                                                  "GEL 4",
-                                                 "Gel 4",
+                                                 "GEL 4",
                                                  "GEL 6",
                                                 "GEL 7",
-                                                 "Gel 8",
+                                                 "GEL 8",
                                                  "GEL 9",
                                                  "GEL 10",
-                                                 "Gel 11",
+                                                 "GEL 11",
                                                  "GEL 12",
                                                  "GEL 13",
                                                  "Gel 14",
                                                  "GEL 15",
                                                  "GEL 16",
-                                                 "Gel 17",
+                                                 "GEL 17",
                                                  "GEL 18",
-                                                "Gel 19",
+                                                "GEL 19",
                                                  "GEL 20"])
     if image_selection == "GEL 1":
         st.title("PCR Gel Image Viewer - Gel 1")
@@ -360,16 +377,28 @@ elif option == "Data Overview":
 
 elif option == "Methods":
     st.title("Overview of Methodology")
-    st.write("""Thresholding was utilized to see if the ground truth image could be recreated using a simple statistical method. Image thresholding separates an image into two or more regions based on the pixel intensity value. Image thresholding simplifies a grayscale image into a binary image based on the image intensity level compared to the threshold value. This reduces the image to two levels of intensity. Global and local thresholding methods were used. 
+    
+    st.write("**Preprocessing for Neural Networks**")
+    st.write("Specifically for a neural network to run, the data has to be of a constant size and shape. One common image size used is 256x256. Each image used was split into smaller segments of 256x256 if the original image was larger than the required shape. After splitting the images, there were over 1000 images. Most of the sections generated contained only background, so to balance the data set, 50 images out of the 1000 were then picked based on present significant features.")
 
-Global thresholding is a segmentation technique that uses a single threshold value to categorize all pixels in an image into foreground or background. The native method was a base threshold model set at 125. A base threshold splits all pixels in the images as a 1 or 0 based on its histogram intensity value. Otsu’s method is a global thresholding technique used for image segmentation. It separates an image into two classes, foreground and background, based on the pixel's grayscale intensity values. Otsu’s method detects an optimal threshold value that separates the two regions using the grayscale histogram. The two regions separate into maximum variance. 
+    st.write("**Augmentation**")
+    st.write("Augmentation was only used on the training data set used for neural network training. The computer would pick a random rotation of between 0 and 45 degrees based on a uniform distribution, and rotate both the image and the corresponding mask. Both images were then saved and used for training. Roughly 50 images from the training data were chosen at random with replacement, to expand the training data set to be around 100 images")
 
-Moreover, local thresholding uses unique threshold values for the partitioned subimages obtained from the whole image.Local thresholding calculates a threshold value for each region based on local features, such as the mean intensity. Mean adaptive thresholding calculates the threshold value for each sub image by taking the average intensity of all the pixels in that area. A constant value was then subtracted from this mean to get the final threshold value. Phansalker local thresholding adapts the threshold value for each pixel based on its local neighbor. Niblack thresholding is useful for images with variations, which makes it suitable for image segmentation. Niblack thresholding calculates a threshold for each pixel based on the mean and standard deviation of the surrounding neighborhood. The image is divided into non-overlapping windows, and the mean and standard deviation of the pixels are calculated for each window. A threshold is then determined for each window. Niblack Thresholding classies pixels with thresholds higher than the local as foreground, and pixels with thresholds lower as background. The local mean and standard deviation provides an estimate for the mean level by the amount of local deviation. The formula also includes a k value, where k is a tuning parameter that controls the threshold sensitivity. To optimize the niblack threshold results, a grid search method was used to determine the best k-value. The intersection over union(IoU) loss function was the selection criteria. The IoU loss function finds the overlap between predicted and ground truth area, and minimizes the difference between them. It divides the area of intersection by the area of union, to calculate the difference. The optimal k value will maximize the IoU score, which ensures the best niblack threshold. 
+    st.write("**Naive Model**")
+    st.write("Our baseline naive model was to threshold each image at the absolute median pixel value of 126.")
 
-CNN is a type of deep learning algorithm that is good for analyzing visual data by using a technique called convolution to extract features. In this project, ResU-Net(Residual U-Net) is used. ResU-Net combines the U-Net architecture with residual networks(resnets) and is specifically designed for image segmentation. U-Net is a CNN architecture designed for image segmentation, and is noted by its encoder-decoder structure that skips connections to allow for increase of detailed information from the encoder to the decoder. ResNet is a CNN architecture as well, but focuses on solving the vanishing gradient problem by using skip connections. By combining U-Net and ResNet, ResU-Net attempts to strengthen both architectures.  
+    st.write("**Global Thresholding**")
+    st.write("Global thresholding is a segmentation technique that applies the same threshold value to all pixels in the image. A global threshold can be set manually or be calculated based on the images overall properties. Otsu is a common method used for global thresholding. Otsu’s method defined the threshold that maximises intra-class variance. Of the foreground and background class.")
 
-A Gel locator was created to help locate each segment of the output images. The gel locator works by analyzing the segmented binary masks to determine the exact position and boundaries of each gel band. The gel locator initially identifies potential gel regions. The detected regions are then filtered based on their size and shape characteristics and the regions are classified as either valid gel segments or noise. The coordinates of each identified gel segment are extracted and bounding boxes are then generated. The gel locator was evaluated on the output of the models, using the test dataset. 
-""")
+    st.write("**Local Thresholding**")
+    st.write("""Local thresholding applies a unique threshold value for each sample or pixel, based on the values of neighboring pixels. Local thresholding is commonly used when there exists high class dependents from neighboring points. Local threshold requires an input window to determine how many pixels away from the pixel of interest should impact the threshold of said pixel. One local method is mean thresholding. The mean threshold calculates the threshold value for each pixel by taking the average intensity of all the pixels in an area and assigning class based on if the pixel is higher or lower than the mean. 
+
+More sophisticated local thresholds like Niblack thresholding calculate a threshold based on mean and standard deviation of the neighborhood. Niblack thresholding calculates a threshold for each pixel based on the mean and standard deviation of the surrounding neighborhood. 
+
+Niblack is calculated as t= mN + (k*sdN) where mN and sdN are the mean and  standard deviation of the neighborhood, and k is a constant normally set as k = -0.2. Niblack has a number of variations that give more weight to specific aspects of the neighborhood, one Niblack variation is Phansalker. The Phansalker threshold formula ist= mN *(1+p*exp(-q*mN)+k)*( (sdN/R)-1). The extra parameters included in the Phansalker formula reduce the likelihood of FP getting introduced into the final image.""")
+    
+
+    
 
 elif option == "Thresholding & Res-U-Net":
     st.title("Thresholding")

@@ -1,35 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.impute import KNNImputer
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import SMOTE
-import plotly.express as px
-from scipy.stats import zscore
-from sklearn.linear_model import LinearRegression # this could be any ML method
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.experimental import enable_iterative_imputer
-from sklearn.impute import IterativeImputer, SimpleImputer
-from sklearn.preprocessing import StandardScaler, RobustScaler
-import plotly.figure_factory as ff
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.model_selection import cross_val_score
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-from sklearn.metrics import (
-    mean_squared_error,
-    mean_absolute_error,
-    r2_score,
-    root_mean_squared_error, 
-)
-
-import zipfile
-from PIL import Image
-
 from PIL import Image
 import numpy as np
 
