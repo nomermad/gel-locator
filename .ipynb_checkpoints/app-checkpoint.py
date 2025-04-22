@@ -134,14 +134,14 @@ if image_phansalker_3.mode == 'I;16' or image_phansalker_3.mode == 'I;16B':
     image_array_phansalker_3 = (255 * (image_array_phansalker_3 / image_array_phansalker_3.max())).astype('uint8')
     image_phansalker_3 = Image.fromarray(image_array_phansalker_3, mode='L')
 
-image_path_niblack_1 = "Gel_1_niblack.tif"
+image_path_niblack_1 = "Gel_1_Niblack.tif"
 image_niblack_1 = Image.open(image_path_niblack_1)
 if image_niblack_1.mode == 'I;16' or image_niblack_1.mode == 'I;16B':
     image_array_niblack_1 = np.array(image_niblack_1)
     image_array_niblack_1 = (255 * (image_array_niblack_1 / image_array_niblack_1.max())).astype('uint8')
     image_niblack_1 = Image.fromarray(image_array_niblack_1, mode='L')
 
-image_path_niblack_3 = "Gel_3_niblack.tif"
+image_path_niblack_3 = "Gel_3_Niblack.tif"
 image_niblack_3 = Image.open(image_path_niblack_3)
 if image_niblack_3.mode == 'I;16' or image_niblack_3.mode == 'I;16B':
     image_array_niblack_3 = np.array(image_niblack_3)
