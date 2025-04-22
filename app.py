@@ -297,83 +297,83 @@ elif option == "Data Overview":
                                                  "GEL 20"])
     if image_selection == "GEL 1":
         st.title("PCR Gel Image Viewer - Gel 1")
-        st.image(images['image_1'], caption="Gel 1", use_container_width=True)
+        st.image(images['image_1'], caption="Gel 1", use_column_width=True)
 
     elif image_selection == "GEL 2":
         st.title("PCR Gel Image Viewer - Gel 2")
-        st.image(images['image_2'], caption="Gel 2", use_container_width=True)
+        st.image(images['image_2'], caption="Gel 2", use_column_width=True)
 
     elif image_selection == "GEL 3":
         st.title("PCR Gel Image Viewer - Gel 3")
-        st.image(images['image_3'], caption="Gel 3", use_container_width=True)
+        st.image(images['image_3'], caption="Gel 3", use_column_width=True)
 
     elif image_selection == "GEL 4":
         st.title("PCR Gel Image Viewer - Gel 4")
-        st.image(images['image_4'], caption="Gel 4", use_container_width=True)
+        st.image(images['image_4'], caption="Gel 4", use_column_width=True)
 
     elif image_selection == "GEL 5":
         st.title("PCR Gel Image Viewer - Gel 5")
-        st.image(images['image_5'], caption="Gel 5", use_container_width=True)
+        st.image(images['image_5'], caption="Gel 5", use_column_width=True)
 
     elif image_selection == "GEL 6":
         st.title("PCR Gel Image Viewer - Gel 6")
-        st.image(images['image_6'], caption="Gel 6", use_container_width=True)
+        st.image(images['image_6'], caption="Gel 6", use_column_width=True)
 
     elif image_selection == "GEL 7":
         st.title("PCR Gel Image Viewer - Gel 7")
-        st.image(images['image_7'], caption="Gel 7", use_container_width=True)
+        st.image(images['image_7'], caption="Gel 7", use_column_width=True)
 
     elif image_selection == "GEL 8":
         st.title("PCR Gel Image Viewer - Gel 8")
-        st.image(images['image_8'], caption="Gel 8", use_container_width=True)
+        st.image(images['image_8'], caption="Gel 8", use_column_width=True)
 
     elif image_selection == "GEL 9":
         st.title("PCR Gel Image Viewer - Gel 9")
-        st.image(images['image_9'], caption="Gel 9", use_container_width=True)
+        st.image(images['image_9'], caption="Gel 9", use_column_width=True)
 
     elif image_selection == "GEL 10":
         st.title("PCR Gel Image Viewer - Gel 10")
-        st.image(images['image_10'], caption="Gel 10", use_container_width=True)
+        st.image(images['image_10'], caption="Gel 10", use_column_width=True)
 
     elif image_selection == "GEL 11":
         st.title("PCR Gel Image Viewer - Gel 11")
-        st.image(images['image_11'], caption="Gel 11", use_container_width=True)
+        st.image(images['image_11'], caption="Gel 11", use_column_width=True)
 
     elif image_selection == "GEL 12":
         st.title("PCR Gel Image Viewer - Gel 12")
-        st.image(images['image_12'], caption="Gel 12", use_container_width=True)
+        st.image(images['image_12'], caption="Gel 12", use_column_width=True)
 
     elif image_selection == "GEL 13":
         st.title("PCR Gel Image Viewer - Gel 13")
-        st.image(images['image_13'], caption="Gel 13", use_container_width=True)
+        st.image(images['image_13'], caption="Gel 13", use_column_width=True)
 
     elif image_selection == "GEL 14":
         st.title("PCR Gel Image Viewer - Gel 14")
-        st.image(images['image_14'], caption="Gel 14", use_container_width=True)
+        st.image(images['image_14'], caption="Gel 14", use_column_width=True)
 
     elif image_selection == "GEL 15":
         st.title("PCR Gel Image Viewer - Gel 15")
-        st.image(images['image_15'], caption="Gel 15", use_container_width=True)
+        st.image(images['image_15'], caption="Gel 15", use_column_width=True)
 
     elif image_selection == "GEL 16":
         st.title("PCR Gel Image Viewer - Gel 16")
-        st.image(images['image_16'], caption="Gel 16", use_container_width=True)
+        st.image(images['image_16'], caption="Gel 16", use_column_width=True)
 
     elif image_selection == "GEL 17":
         st.title("PCR Gel Image Viewer - Gel 17")
-        st.image(images['image_17'], caption="Gel 17", use_container_width=True)
+        st.image(images['image_17'], caption="Gel 17", use_column_width=True)
 
     elif image_selection == "GEL 18":
         st.title("PCR Gel Image Viewer - Gel 18")
-        st.image(images['image_18'], caption="Gel 18", use_container_width=True)
+        st.image(images['image_18'], caption="Gel 18", use_column_width=True)
 
     elif image_selection == "GEL 19":
         st.title("PCR Gel Image Viewer - Gel 19")
-        st.image(images['image_19'], caption="Gel 19", use_container_width=True)
+        st.image(images['image_19'], caption="Gel 19", use_column_width=True)
 
     elif image_selection == "GEL 20":
         st.title("PCR Gel Image Viewer - Gel 20")
-        st.image(images['image_20'], caption="Gel 20", use_container_width=True)
+        st.image(images['image_20'], caption="Gel 20", use_column_width=True)
 
 elif option == "Methods":
     st.title("Overview of Methodology")
@@ -408,22 +408,22 @@ elif option == "Thresholding & Res-U-Net":
                                                  "Mask 3"])
     if mask_image_selection_basic == "Mask 1":
         st.title("PCR Gel Image Viewer - Mask 1")
-        st.image(image_mask_1, caption="Mask 1", use_container_width=True)
+        st.image(image_mask_1, caption="Mask 1", use_column_width=True)
 
     elif mask_image_selection_basic == "Mask 3":
         st.title("PCR Gel Image Viewer - Mask 3")
-        st.image(image_mask_3, caption="Mask 3", use_container_width=True)
+        st.image(image_mask_3, caption="Mask 3", use_column_width=True)
     st.write("**Original Images before Thresholding**")
     original_image_selection_basic = st.selectbox("Choose an Image to display:", 
                                                 ["GEL 1",
                                                  "GEL 3"])
     if original_image_selection_basic == "GEL 1":
         st.title("PCR Gel Image Viewer - Gel 1")
-        st.image(image_basic_1, caption="Gel 1", use_container_width=True)
+        st.image(image_basic_1, caption="Gel 1", use_column_width=True)
 
     elif original_image_selection_basic == "GEL 3":
         st.title("PCR Gel Image Viewer - Gel 3")
-        st.image(image_basic_3, caption="Gel 3", use_container_width=True)
+        st.image(image_basic_3, caption="Gel 3", use_column_width=True)
 
     st.write("**Images after Otsu Thresholding**")
     otsu_image_selection_basic = st.selectbox("Choose an Image to display:", 
@@ -431,11 +431,11 @@ elif option == "Thresholding & Res-U-Net":
                                                  "GEL 3 Otsu"])
     if otsu_image_selection_basic == "GEL 1 Otsu":
         st.title("PCR Gel Image Viewer - Gel 1 Otsu")
-        st.image(image_otsu_1, caption="Gel 1 Otsu", use_container_width=True)
+        st.image(image_otsu_1, caption="Gel 1 Otsu", use_column_width=True)
 
     elif otsu_image_selection_basic == "GEL 3 Otsu":
         st.title("PCR Gel Image Viewer - Gel 3 Otsu")
-        st.image(image_otsu_3, caption="Gel 3 Otsu", use_container_width=True)
+        st.image(image_otsu_3, caption="Gel 3 Otsu", use_column_width=True)
 
     st.write("**Images after Basic Thresholding**")
     image_selection_basic_127 = st.selectbox("Choose an Image to display:", 
@@ -443,11 +443,11 @@ elif option == "Thresholding & Res-U-Net":
                                                  "GEL 3 127"])
     if image_selection_basic_127 == "GEL 1 127":
         st.title("PCR Gel Image Viewer - Gel 1 127")
-        st.image(image_basic_1_127, caption="Gel 1 127", use_container_width=True)
+        st.image(image_basic_1_127, caption="Gel 1 127", use_column_width=True)
 
     elif image_selection_basic_127 == "GEL 3 127":
         st.title("PCR Gel Image Viewer - Gel 3 127")
-        st.image(image_basic_3_127, caption="Gel 3 127", use_container_width=True)
+        st.image(image_basic_3_127, caption="Gel 3 127", use_column_width=True)
 
     st.write("**Images after Phansalker Thresholding**")
     phansalker_image_selection_basic = st.selectbox("Choose an Image to display:", 
@@ -455,22 +455,22 @@ elif option == "Thresholding & Res-U-Net":
                                                  "GEL 3 Phansalker"])
     if phansalker_image_selection_basic == "GEL 1 Phansalker":
         st.title("PCR Gel Image Viewer - Gel 1 Phansalker")
-        st.image(image_phansalker_1, caption="Gel 1 Phansalker", use_container_width=True)
+        st.image(image_phansalker_1, caption="Gel 1 Phansalker", use_column_width=True)
 
     elif phansalker_image_selection_basic == "GEL 3 Phansalker":
         st.title("PCR Gel Image Viewer - Gel 3 Phansalker")
-        st.image(image_phansalker_3, caption="Gel 3 Phansalker", use_container_width=True)
+        st.image(image_phansalker_3, caption="Gel 3 Phansalker", use_column_width=True)
     st.write("**Images after Niblack Thresholding**")
     niblack_image_selection_basic = st.selectbox("Choose an Image to display:", 
                                                 ["GEL 1 Niblack",
                                                  "GEL 3 Niblack"])
     if niblack_image_selection_basic == "GEL 1 Niblack":
         st.title("PCR Gel Image Viewer - Gel 1 Niblack")
-        st.image(image_niblack_1, caption="Gel 1 Niblack", use_container_width=True)
+        st.image(image_niblack_1, caption="Gel 1 Niblack", use_column_width=True)
 
     elif niblack_image_selection_basic == "GEL 3 Niblack":
         st.title("PCR Gel Image Viewer - Gel 3 Niblack")
-        st.image(image_niblack_3, caption="Gel 3 Niblack", use_container_width=True)
+        st.image(image_niblack_3, caption="Gel 3 Niblack", use_column_width=True)
 
     st.title("**Res-U-Net**")
     st.write("**Fragmented sections**")
@@ -479,11 +479,11 @@ elif option == "Thresholding & Res-U-Net":
                                                  "Selection 045"])
     if fragment_selection_original == "Selection 025":
         st.title("PCR Gel Image Viewer - Selection 025")
-        st.image(section_025, caption="Selection 025", use_container_width=True)
+        st.image(section_025, caption="Selection 025", use_column_width=True)
 
     elif fragment_selection_original == "Selection 045":
         st.title("PCR Gel Image Viewer - Selection 045")
-        st.image(section_045, caption="Selection 045", use_container_width=True)
+        st.image(section_045, caption="Selection 045", use_column_width=True)
 
     st.write("**Fragmented sections - Test**")
     fragment_selection_test = st.selectbox("Choose an Image to display:", 
@@ -491,11 +491,11 @@ elif option == "Thresholding & Res-U-Net":
                                                  "Selection 045 - Test"])
     if fragment_selection_test == "Selection 025 - Test":
         st.title("PCR Gel Image Viewer - Selection 025 - Test")
-        st.image(section_test_025, caption="Selection 025 - Test", use_container_width=True)
+        st.image(section_test_025, caption="Selection 025 - Test", use_column_width=True)
 
     elif fragment_selection_test == "Selection 045 - Test":
         st.title("PCR Gel Image Viewer - Selection 045 - Test")
-        st.image(section_test_045, caption="Selection 045 - Test", use_container_width=True)
+        st.image(section_test_045, caption="Selection 045 - Test", use_column_width=True)
 
     st.write("**Fragmented sections - Niblack**")
     fragment_selection_niblack = st.selectbox("Choose an Image to display:", 
@@ -503,11 +503,11 @@ elif option == "Thresholding & Res-U-Net":
                                                  "Selection 045 - Niblack"])
     if fragment_selection_niblack == "Selection 025 - Niblack":
         st.title("PCR Gel Image Viewer - Selection 025 - Niblack")
-        st.image(section_niblack_025, caption="Selection 025 - Niblack", use_container_width=True)
+        st.image(section_niblack_025, caption="Selection 025 - Niblack", use_column_width=True)
 
     elif fragment_selection_niblack == "Selection 045 - Niblack":
         st.title("PCR Gel Image Viewer - Selection 045 - Niblack")
-        st.image(section_niblack_045, caption="Selection 045 - Niblack", use_container_width=True)
+        st.image(section_niblack_045, caption="Selection 045 - Niblack", use_column_width=True)
    
     
     st.write("**Reconstructed full images**")
@@ -517,14 +517,14 @@ elif option == "Thresholding & Res-U-Net":
                                                 "Reconstructed Gel 27"])
     if reconstruction_image_selection == "GEL 27":
         st.title("PCR Gel Image Viewer - GEL 27")
-        st.image(image_27, caption="Gel 27", use_container_width=True)
+        st.image(image_27, caption="Gel 27", use_column_width=True)
 
     elif reconstruction_image_selection == "GEL 27 Masked":
         st.title("PCR Gel Image Viewer - Gel 27 Masked")
-        st.image(image_mask_27, caption="GEL 27 Masked", use_container_width=True)
+        st.image(image_mask_27, caption="GEL 27 Masked", use_column_width=True)
     elif reconstruction_image_selection == "Reconstructed Gel 27":
         st.title("PCR Gel Image Viewer - Reconstructed Gel 27")
-        st.image(image_reconstructed_27, caption="GEL 27 Reconstructed", use_container_width=True)
+        st.image(image_reconstructed_27, caption="GEL 27 Reconstructed", use_column_width=True)
 
     
 elif option == "GEL Locator":
@@ -536,30 +536,30 @@ elif option == "GEL Locator":
                                                 "Augmented Samples"])
     if gel_band_selection == "Positive Samples":
         st.title("Positive Samples")
-        st.image(image_positive_gel, caption="Positive Samples", use_container_width=True)
+        st.image(image_positive_gel, caption="Positive Samples", use_column_width=True)
 
     elif gel_band_selection == "Background Samples":
         st.title("Background Samples")
-        st.image(image_background_gel, caption="Background Samples", use_container_width=True)
+        st.image(image_background_gel, caption="Background Samples", use_column_width=True)
 
     elif gel_band_selection == "Augmented Samples":
         st.title("Augmented Samples")
-        st.image(image_augmented_gel, caption="Augumented Samples", use_container_width=True)
+        st.image(image_augmented_gel, caption="Augumented Samples", use_column_width=True)
 
     st.title("Random Forest and XGboost on Band Detection")
     st.title("Augmented Samples")
-    st.image(image_iou_results, caption="IOU Results", use_container_width=True)
+    st.image(image_iou_results, caption="IOU Results", use_column_width=True)
 
     model_selection = st.selectbox("Choose an Image to display:", 
                                                 ["Random Forest",
                                                  "XGboost"])
     if model_selection == "Random Forest":
         st.title("Random Forest")
-        st.image(image_randomforest_results, caption="Random Forest", use_container_width=True)
+        st.image(image_randomforest_results, caption="Random Forest", use_column_width=True)
 
     elif model_selection == "XGboost":
         st.title("XGboost")
-        st.image(image_xgboost_results, caption="XGboost", use_container_width=True)
+        st.image(image_xgboost_results, caption="XGboost", use_column_width=True)
     
 
     
