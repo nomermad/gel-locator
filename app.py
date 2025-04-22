@@ -16,49 +16,65 @@ for i in range(1, 21):
 
 
 st.markdown("""
-    <style>
+<style>
     .stApp {
         background: linear-gradient(to bottom, #000000, #1a1a2e, #16213e, #0f3460);
         color: white;
         font-family: 'Helvetica Neue', sans-serif;
     }
-
+ 
     /* General text */
     h1, h2, h3, h4, h5, h6, p, div, span, label {
-        color: #e0e0e0 !important;
+        color: #a0a0a0 !important; 
     }
-
+ 
     /* Sidebar */
     section[data-testid="stSidebar"] {
         background-color: #111111 !important;
-        color: #e0e0e0 !important;
+        color: #a0a0a0 !important; 
     }
-
+    /* Make sidebar text bold for better visibility */
+    section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {
+        font-weight: bold !important;
+    }
+    /* Target the sidebar navigation items specifically */
+    section[data-testid="stSidebar"] div.stSelectbox label,
+    section[data-testid="stSidebar"] div.stSelectbox div[data-baseweb="select"] span {
+        color: #a0a0a0 !important; 
+        font-weight: bold !important;
+        text-shadow: 0px 0px 2px rgba(0,0,0,0.8); 
+    }
+ 
     /* Dropdown input box */
     div[data-baseweb="select"] > div {
         background-color: #1c1c1c !important;
-        color: #f0f0f0 !important;
-        border-color: #444 !important;
+        color: #a0a0a0 !important; 
+        border-color: #555 !important; 
     }
-
+ 
     /* Dropdown menu */
     div[data-baseweb="select"] div[role="listbox"] {
         background-color: #1c1c1c !important;
-        color: #f0f0f0 !important;
+        color: #a0a0a0 !important; 
     }
-
+ 
     /* Dropdown options */
     div[data-baseweb="select"] div[role="option"] {
         background-color: #1c1c1c !important;
-        color: #f0f0f0 !important;
+        color: #a0a0a0 !important; 
+        font-weight: bold !important; 
     }
-
+ 
     /* Hovered dropdown option */
     div[data-baseweb="select"] div[role="option"]:hover {
         background-color: #333333 !important;
         color: #ffffff !important;
     }
-    </style>
+    /* Add box shadow to dropdown for better visibility */
+    div[data-baseweb="select"] {
+        box-shadow: 0px 0px 3px rgba(255,255,255,0.3) !important;
+    }
+</style>
 """, unsafe_allow_html=True)
 
 
